@@ -1,4 +1,3 @@
-# son-em
 SON-EM 
 ==============
 Algorithm for parameter estimation of hybrid time-varying parameter systems using Sum of Norms regularization and Expectation Maximization 
@@ -23,12 +22,12 @@ Make the directory son-em accessible to MATLAB
 Content
 --------------
 
-runtests.m                  -> Run this to execute all tests (runs in about 1 minute on 2.4gHz cpu)
-LICENSE                     -> License file
-README.txt                  -> This file
-generateHMM.m               -> generates a hidden markov model
-son\_EM\_plot.m               -> plots an example time-series
-son\_EM\_sensitivity\_test.m   -> tests the sensitivity of the son\_em method to the lambda parameter
-son\_EM\_son.m                -> son\_em method
-Theta.mat                   -> example time-varying parameter
+- runtests.m                  -> Run this to execute all tests (runs in about 1 minute on 2.4gHz cpu)
+- LICENSE                     -> License file
+- README.txt                  -> This file
+- generateHMM.m               -> generates a hidden markov model
+- son\_EM\_plot.m               -> plots an example time-series
+- son\_EM\_sensitivity\_test.m   -> tests the sensitivity of the son\_em method to the lambda parameter
+- son\_EM\_son.m                -> son\_em method
+- Theta.mat                   -> example time-varying parameter
 
