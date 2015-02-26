@@ -1,3 +1,4 @@
+%script to run the tests
 clear;
 close all;
 son_EM_plot;
