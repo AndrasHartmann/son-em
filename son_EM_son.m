@@ -12,6 +12,7 @@ function [th Theta] = son_EM_son(y, Fi, T, K, lambda1, p)
 %
 % return: 
 % th: the parameter vector, the rows correspond to the identified parameters after each step of the algorithm
+% Theta: nXK matrix of parameter vectors
 %
 %
 %    SON-EM - An algorithm for hybrid system identification of SARX models 

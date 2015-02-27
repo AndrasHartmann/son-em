@@ -1,28 +1,31 @@
 function [Y, Fi, Theta] = generateHMM(tmax,x0,u,r,myseed, Am)
-%function [Y, Fi, Theta] = generateHMM(tmax,x0,u,A,Theta,s0,r)
+%function [Y, Fi, Theta] = generateHMM(tmax,x0,u,r,myseed, Am)
 %generates time-series with Hidden Markov Model
+%
+%    Copyright (C) 2013-2015 Andras Hartmann <andras.hartmann@gmail.com>
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
+
+
 % TODO: fix doc
-% Y(t+1) = fi(t)'*th(t) + u(t) + e
-% where 
-% e ~ N(0,r^2)
-% fi = [y(t); y(-1); u(t))
-%example:
-%tmax = 127;
-%u = idinput(tmax,'prbs');
-%x0 = 3;
-%r = 0.5;
-%[Y, Fi, Theta] = generateHMM(tmax,x0,u,r);
-%plot(Y);
 if (nargin<6)
     Am = [  0.98    0.02    0       0;
     0.01    0.98    0.01    0;
     0       0.01    0.98    0.01;
     0       0       0.02    0.98];
 
-    %Am = [  0.98    0.02    0       0;
-    %0.01    0.98    0.01    0;
-    %0       0.01    0.94    0.05;
-    %0       0       0.02    0.98];
 end;
 
 if(nargin==4)
@@ -30,7 +33,7 @@ if(nargin==4)
 
 else
 
-    % This should generate random theta sequence, but... it can not be initialized, so rather we load a pre-saved theta
+    % This should generate random theta sequence, but to be reproducible rather we load a pre-saved theta
 
     %initialize random number generator
     %randn('seed', myseed)
@@ -43,11 +46,8 @@ else
 
     Emis = eye(numstates);
 
-    %theta = kron(hmmgenerate(300,Am,Emis,'Symbols',statelevels), ones(1,10));
     th = hmmgenerate(tmax,Am,Emis,'Symbols',statelevels);
 
-    %figure;
-    %plot(th);
 end;
 
 
@@ -63,13 +63,12 @@ Y = ones(1,tmax)*x0;
 for t=3:tmax
 
     %generating the time-series
-    fi = [Y(t-1); Y(t-2); u(t-1); u(t-2)];% + [0.1*rand; 0.1*rand];
+    fi = [Y(t-1); Y(t-2); u(t-1); u(t-2)];
 
 
     y = fi'*Theta(:,t) + r*randn;
 
     Fi(:,t) = fi;
-    %Theta(:,t) = theta;
     Y(t) = y;
 
 end

@@ -1,7 +1,23 @@
-set(0,'DefaultAxesFontSize', 13)
-set(0,'DefaultAxesFontWeight', 'bold')
-set(0,'DefaultTextFontSize', 13)
-set(0,'DefaultTextFontWeight', 'bold')
+%Script that to plot the step-by-step estimates of the SON-EM algorithm
+%
+%    Copyright (C) 2013-2015 Andras Hartmann <andras.hartmann@gmail.com>
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
+
+clear;
+
 %generating the dataset
 T = 127;
 u = idinput(T,'prbs');
@@ -35,7 +51,6 @@ theta = son_EM_son(Y, fi, T, K, lambda);
 
 
 %plotting starts here
-
 mylegends = {'step 1','step 2', 'step 3', 'Real parameter' };
 
 figure
@@ -64,6 +79,7 @@ set(gca,'ygrid', 'on')
 
 xlabel(gca, 'time')
 
+%Uncomment this if you want to print / save
 %print('son_EM_generated', '-depsc');
 %save 'son_EM_generated';
 
