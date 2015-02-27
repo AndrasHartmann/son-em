@@ -36,7 +36,6 @@ theta = son_EM_son(Y, fi, T, K, lambda);
 
 %plotting starts here
 
-%mylegends = {'SON','SON + EM', 'SON + EM + SON', 'Real parameter' };
 mylegends = {'step 1','step 2', 'step 3', 'Real parameter' };
 
 figure

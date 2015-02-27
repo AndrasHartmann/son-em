@@ -78,10 +78,16 @@ miu = 0;
 for iter = 1:10
     try
         %Some steps of kmeans
+        %Disable some warnings, we do not care if it does not converge
         warning('off', 'stats:kmeans:EmptyCluster');
+        warning('off', 'stats:kmeans:FailedToConverge');
         [idx_init,~,~,~] = kmeans(theta,K, 'emptyaction', 'singleton', 'replicates', 100, 'onlinephase', 'off', 'options', options_kmeans);
         warning('on', 'stats:kmeans:EmptyCluster');
+        warning('on', 'stats:kmeans:FailedToConverge');
+
+        warning('off', 'stats:gmdistribution:FailedToConverge');
         obj = gmdistribution.fit(theta,K,'Start', idx_init, 'Regularize', 10^-8, 'options', options_EM);
+        warning('on', 'stats:gmdistribution:FailedToConverge');
         [IDX_,nlogl_] = cluster(obj,theta);
         if nlogl_<nlogl
             nlogl = nlogl_;
