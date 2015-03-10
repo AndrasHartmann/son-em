@@ -634,6 +634,13 @@ the "copyright" line and a pointer to where the full notice is found.
     SON-EM - An algorithm for hybrid system identification of SARX models 
     Copyright (C) 2013-2015 Andras Hartmann <andras.hartmann@gmail.com>
 
+
+    If you use this software please, cite the following paper:
+    Hartmann, A., Lemos, J. M., Costa, R. S., Xavier, J., & Vinga, S. (2015).
+    Identification of Switched ARX Models via Convex Optimization and 
+    Expectation Maximization. Journal of Process Control, (28), 9–16. 
+    doi:10.1016/j.jprocont.2015.02.003
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or

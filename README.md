@@ -3,9 +3,15 @@ SON-EM
 
 An algorithm for hybrid system identification of Switched affine AutoRegressive model with eXogenous inputs (SARX) models using Sum of Norms regularization and Expectation Maximization 
 
-About this software
+
+Cite this software
 --------------
-This software is to accompy the submission to “Identification of Switched ARX Models via Convex Optimization and Expectation Maximization” for publication Journal of Process Control by András Hartmann, João M. Lemos, Rafael S. Costa, João Xavier, and Susana Vinga
+
+If you use this software please, cite the following paper:
+
+Hartmann, A., Lemos, J. M., Costa, R. S., Xavier, J., & Vinga, S. (2015). Identification of Switched ARX Models via Convex Optimization and Expectation Maximization. Journal of Process Control, (28), 9–16.
+
+Available at: http://dx.doi.org/10.1016/j.jprocont.2015.02.003
 
 Installation
 --------------
