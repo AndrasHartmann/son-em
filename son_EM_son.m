@@ -1,4 +1,4 @@
-function [th Theta] = son_EM_son(y, Fi, T, K, lambda1, p)
+function [th Theta IDX] = son_EM_son(y, Fi, T, K, lambda1, p)
 %SON-EM algorithm for hybrid system identification of Switched affine AutoRegressive model with eXogenous inputs (SARX) models
 %
 %    If you use this software please, cite the following paper:
