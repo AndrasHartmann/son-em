@@ -20,7 +20,7 @@ $tar -xzf son-em.tar.gz
 
 Make the directory son-em accessible to MATLAB
 
-###Prerequisites:
+### Prerequisites:
 - Tested on MATLAB 7.14.0.739 (R2012a)
 - Statistics Toolbox
 - System Identification Toolbox
@@ -30,7 +30,7 @@ Content
 --------------
 
 - runtests.m                    -> Run this to execute all tests (runs in about 1 minute on 2.4gHz cpu)
-- LICENSE                       -> License file
+- LICENSE                       -> License file (GPL v3)
 - README.md                     -> This file
 - generateHMM.m                 -> generates a hidden markov model
 - son\_EM\_plot.m               -> plots an example time-series
