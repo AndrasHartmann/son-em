@@ -21,7 +21,9 @@ $tar -xzf son-em.tar.gz
 Make the directory son-em accessible to MATLAB
 
 ### Prerequisites:
-- Tested on MATLAB 7.14.0.739 (R2012a)
+- MATLAB, tested on versions: 
+  - 7.14.0.739 (R2012a)
+  - 8.6.0.267246 (R2015b)
 - Statistics Toolbox
 - System Identification Toolbox
 - CVX MATLAB package for convex optimization, available at http://cvxr.com/cvx/download/
